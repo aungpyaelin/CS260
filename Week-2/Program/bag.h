@@ -2,3 +2,8 @@
 #pragma once
 
 #include <iostream>
+
+class Bag{
+    private:
+    
+};
