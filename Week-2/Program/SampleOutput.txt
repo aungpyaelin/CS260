@@ -1,0 +1,92 @@
+Welcome to bag program
+We are creating 5 empty bags.
+
+We will now attempt to add 2 of item d to bag 4
+The contents of the bag are now as follows:{d, d}
+
+We will now attempt to add 2 of item f to bag 2
+The contents of the bag are now as follows:{f, f}
+
+We will now attempt to add 1 of item a to bag 3
+The contents of the bag are now as follows:{a}
+
+We will now attempt to remove 2 of item e from bag 2
+The contents of the bag are now as follows:{f, f}
+
+We will now attempt to remove 2 of item d from bag 4
+The contents of the bag are now as follows:{}
+
+We will now attempt to remove 3 of item a from bag 4
+This operation failed: Bag is empty.
+
+We will now attempt to add 3 of item a to bag 4
+The contents of the bag are now as follows:{a, a, a}
+
+We will now attempt to add 2 of item c to bag 2
+The contents of the bag are now as follows:{c, c, f, f}
+
+We will now attempt to remove 4 of item a from bag 3
+The contents of the bag are now as follows:{}
+
+We will now attempt to add 3 of item b to bag 1
+The contents of the bag are now as follows:{b, b, b}
+
+We will now attempt to add 3 of item e to bag 2
+The contents of the bag are now as follows:{c, c, e, e, e, f, f}
+
+We will now attempt to add 4 of item c to bag 2
+The contents of the bag are now as follows:{c, c, c, c, c, c, e, e, e, f, f}
+
+We will now attempt to remove 4 of item f from bag 1
+The contents of the bag are now as follows:{b, b, b}
+
+We will now attempt to add 4 of item b to bag 5
+The contents of the bag are now as follows:{b, b, b, b}
+
+We will now attempt to remove 3 of item b from bag 1
+The contents of the bag are now as follows:{}
+
+We will now attempt to add 4 of item c to bag 3
+The contents of the bag are now as follows:{c, c, c, c}
+
+We will now attempt to add 4 of item a to bag 5
+The contents of the bag are now as follows:{a, a, a, a, b, b, b, b}
+
+We will now attempt to remove 4 of item c from bag 4
+The contents of the bag are now as follows:{a, a, a}
+
+We will now attempt to remove 4 of item b from bag 5
+The contents of the bag are now as follows:{a, a, a, a}
+
+We will now attempt to add 3 of item a to bag 1
+The contents of the bag are now as follows:{a, a, a}
+
+We will now attempt to remove 3 of item c from bag 2
+The contents of the bag are now as follows:{c, c, c, e, e, e, f, f}
+
+We will now attempt to remove 2 of item d from bag 1
+The contents of the bag are now as follows:{a, a, a}
+
+We will now attempt to add 4 of item e to bag 3
+The contents of the bag are now as follows:{c, c, c, c, e, e, e, e}
+
+We will now attempt to remove 2 of item e from bag 4
+The contents of the bag are now as follows:{a, a, a}
+
+We will now attempt to remove 3 of item c from bag 2
+The contents of the bag are now as follows:{e, e, e, f, f}
+
+Bag 1: {a, a, a}
+Bag 2: {e, e, e, f, f}
+Bag 3: {c, c, c, c, e, e, e, e}
+Bag 4: {a, a, a}
+Bag 5: {a, a, a, a}
+
+We will now subtract Bag 2 from Bag 1
+{e, e, e, f, f}
+We will now add Bag 2 to Bag 3
+{c, c, c, c, e, e, e, e, e, e, e, f, f}
+We will now demonstrate union of Bag 1 and Bag 2
+{a, a, a, e, e, e, f, f}
+We will now demonstrate intersection of Bag 2 and Bag 3
+{e, e, e}
