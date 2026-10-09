@@ -23,7 +23,7 @@ LinkedList::~LinkedList(){
     
 void LinkedList::append(int a_value){
     Node* curr = head; // used for traversing the list to the end 
-    Node* baby = new Node(a_value); // address of newly-created node to append
+    Node* baby = new Node{a_value, nullptr}; // address of newly-created node to append
     
     if (!head) {
         head = baby;
@@ -48,7 +48,6 @@ void LinkedList::display() {
     }
 }
 
-
 void LinkedList::display_new(int order) {
     cout << "Recursive List:" << endl;
     listRecursively(head, order);
@@ -69,4 +68,16 @@ void LinkedList::listRecursively(Node* node, int order){
 
 void LinkedList::operator<<(int new_value) {
     append(new_value);
+}
+
+std::ostream& operator<<(std::ostream& os, LinkedList& list){
+    Node* curr = list.head; // used for traversing the list 
+    
+    os << "List:" << endl;
+    
+    while (curr) {
+        os << curr->value << endl;
+        curr = curr->next;
+    }
+    return os;
 }

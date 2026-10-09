@@ -2,6 +2,7 @@
 // CS260 Week 3 Lab 2 
 
 #pragma once    // replaces ifndef; 
+#include <iostream>
 
 // Note: using namespace std; is not allowed in .h files by convention
 
@@ -24,5 +25,5 @@ class LinkedList {
         void display();
         void display_new(int order = 1);
         void operator<<(int);
-
+        friend std::ostream& operator<<(std::ostream&, LinkedList&);
 };

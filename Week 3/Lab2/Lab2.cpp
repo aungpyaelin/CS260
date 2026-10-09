@@ -28,7 +28,9 @@ int main()
     list2 << 5;
     list2 << 7;
     list2 << 11;
-    // cout << list2;
+    
+    cout << endl;
+    cout << list2;
     
     cout << "\nProgram complete.\n";
     return 0;
