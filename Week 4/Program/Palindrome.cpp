@@ -17,10 +17,11 @@ Type your choice of "OK to share" or "Private"
 ******************************************************************************/
 #include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
-//Gloal Constant
+//Global Constant
 const int SIZE = 4;
 //Function Prototype
 bool IsPalindrome(string);
@@ -40,19 +41,23 @@ int main(){
     }
 
     //zeroize
-
+    for (int i = 0; i < SIZE; i++)
+    {
+        strArr[i].clear();
+    }
+    
     
     //release memory
     delete[] strArr;
 
+    strArr = nullptr;
+
     return 0;
 }
 
-// Determine if a string is palindrome or not
+// Recursive function to determine if a string is palindrome or not
 // The function takes a string as an argument
 // Return true if its a palindrome and false if it's not
 bool IsPalindrome(string str){
-
-    return true;
-
+    
 }
