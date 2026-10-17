@@ -14,6 +14,9 @@ Sources:
 
 Ok to share
 
+
+Lambda Capture
+
 ******************************************************************************/
 #include <iostream>
 #include <string>
@@ -23,8 +26,9 @@ using namespace std;
 
 //Global Constant
 const int SIZE = 4;
+const char PUNCTUATIONS[] {'.', '!', '?', ',', ':', ';', '\'', '\"', '-', '(', ')', '[', ']'};
 //Function Prototype
-bool IsPalindrome(string, int);
+bool IsPalindrome(string, int, int);
 
 int main(){
     
@@ -40,7 +44,23 @@ int main(){
     //Loop through all the palindromes
     for (int i = 0; i < SIZE; i++)
     {
-        cout << strArr[i] << (IsPalindrome(strArr[i], strArr[i].length()) ? " is " : " is not ") 
+        for (int j = 0; j < sizeof(PUNCTUATIONS); j++)
+        {
+            if (strArr[i].find(PUNCTUATIONS[j]) != string::npos)
+            {
+                strArr[i].erase(remove_if(strArr[i].begin(), strArr[i].end(), [](char c) {
+                    return c== PUNCTUATIONS[j];
+                }), strArr[i].end());
+            }
+        }
+        // if (strArr[i].find(',') != string::npos || strArr[i].find(' ') != string::npos || strArr[i].find('!') != string::npos)
+        // {
+        //     strArr[i].erase(remove_if(strArr[i].begin(), strArr[i].end(), [](char c) {
+        //         return c== ',' || c == ' ' || c == '!';
+        //     }), strArr[i].end());
+        // }
+        
+        cout << strArr[i] << (IsPalindrome(strArr[i], 0, strArr[i].length() - 1) ? " is " : " is not ") 
              << "a palindrome." << endl;
     }
 
@@ -84,8 +104,12 @@ int main(){
 // }
 
 
-// bool IsPalindrome(string str, int left, int right){
+bool IsPalindrome(string str, int left, int right){
 
-
-//     return tolower(str[left]) == tolower(str[right - 1]) && IsPalindrome(str, left + 1, right - 1);
-// }
+    if (left >= right)
+    {
+        return true;
+    }
+    
+    return tolower(str[left]) == tolower(str[right]) && IsPalindrome(str, left + 1, right - 1);
+}
