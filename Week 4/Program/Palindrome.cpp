@@ -1,30 +1,30 @@
 /******************************************************************************
 
-ProgName.cpp
+Palindrome.cpp
 
-Student Name
+Aung Pyae Lin
 
-CSxxx Term Year - Inst: Mitch Priestley <-- please spell my name including the 'e' ending l-e-y
+CS260 Fall 2026 - Inst: Mitch Priestley
 
-Purpose: This program does a thing (state purpose briefly in 1-2 lines)
+Purpose: 
 
-Specification: Elaborate on what the program does and hw it does it, detailing I/O (2-4 lines)
+Specification: 
 
-Sources: (list the textbook, websites, and other sources consulted; cite liberally)
+Sources: 
 
-Type your choice of "OK to share" or "Private"
+Ok to share
 
 ******************************************************************************/
 #include <iostream>
 #include <string>
-#include <cstring>
+#include <algorithm>
 
 using namespace std;
 
 //Global Constant
 const int SIZE = 4;
 //Function Prototype
-bool IsPalindrome(string);
+bool IsPalindrome(string, int);
 
 int main(){
     
@@ -36,7 +36,7 @@ int main(){
 
     for (int i = 0; i < SIZE; i++)
     {
-        cout << strArr[i] << (IsPalindrome(strArr[i]) ? " is " : " is not ") 
+        cout << strArr[i] << (IsPalindrome(strArr[i], strArr[i].length()) ? " is " : " is not ") 
              << "a palindrome." << endl;
     }
 
@@ -45,7 +45,6 @@ int main(){
     {
         strArr[i].clear();
     }
-    
     
     //release memory
     delete[] strArr;
@@ -58,6 +57,17 @@ int main(){
 // Recursive function to determine if a string is palindrome or not
 // The function takes a string as an argument
 // Return true if its a palindrome and false if it's not
-bool IsPalindrome(string str){
+bool IsPalindrome(string str, int size){
+    //Base Case
+    if(size <= str.length()/2 )
+        return true;
+
+    // if (str.find(',') != string::npos && str.find(' ') != string::npos)
+    // {
+    //     str.erase(remove_if(str.begin(), str.end(), [](char c) {
+    //         return c== ',' || c == ' ' || c == '!';
+    //     }), str.end());
+    // }
     
+    return str[str.length() - size] == str[size - 1] && IsPalindrome(str, size - 1);
 }
