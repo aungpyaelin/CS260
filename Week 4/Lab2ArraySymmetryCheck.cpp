@@ -24,10 +24,17 @@ to write it as a recursive algorithm and submit that for more XCR!
 using namespace std;
 
 bool IsSymmetric(int[], int, int);
+bool IsSymmetricMatrix(int[][3], int);
 
 int main(){
     int numList[] {3,5,7,11,99,99,11,7,5,3};
     int size = sizeof(numList)/sizeof(numList[0]);
+
+    int matrix[3][3] = {
+        {1, 2, 3},
+        {2, 4, 5},
+        {3, 5, 6}
+    };
 
     cout << "Array Symmetry Classifier \n\n";
 
@@ -35,11 +42,14 @@ int main(){
     cout << (IsSymmetric(numList, 0, size - 1) ? " is " : " is not " )
          << "symmetric.\n";
 
+    cout << "The matrix" << flush;
+    cout << (IsSymmetricMatrix(matrix, 3) ? " is " : " is not " )
+         << "symmetric.\n";
+
     cout << "\nProgram Completed.";
 
     return 0;
 }
-
 
 // bool IsSymmetric(int arr[], int left, int right){
 //     // Base Case
@@ -63,4 +73,9 @@ bool IsSymmetric(int arr[], int left, int right){
         return true;
     // Recursive case   
     return arr[left] == arr[right] && IsSymmetric(arr, left + 1, right - 1);
+}
+
+bool IsSymmetricMatrix(int arr[][3], int size){
+    // Base Case
+    
 }
