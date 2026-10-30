@@ -3,35 +3,22 @@
 
 using namespace std;
 
-LinkedList::~LinkedList(){
-    Node* curr = head;
-    Node* temp;
-
-    while(curr){
-        temp = curr;
-        curr = curr->next;
-        delete temp;
-    }
+void Bag::addItem(string name, int num){
+    items[name] += num;
 }
 
-void LinkedList::append(int num){
-    Node* curr = head;
-    Node* baby = new Node{num, nullptr};
+Bag Bag::operator+(const Bag& other){
+    Bag result = *this;
 
-    if(!head){
-        head = baby;
-    }else{
-        while(curr->next){
-            curr = curr->next;
-        }
-        curr->next = baby;
+    for(auto item: other.items){
+        result.items[item.first] += item.second;
     }
+
+    return result;
 }
 
-void LinkedList::display(){
-    Node* curr = head;
-    while(curr){
-        cout << curr->value << endl;
-        curr = curr->next;
+void Bag::display(){
+    for(auto item: items){
+        cout << item.first << " " << item.second << endl;
     }
 }

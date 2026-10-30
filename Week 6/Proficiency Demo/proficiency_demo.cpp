@@ -13,30 +13,28 @@
 
 using namespace std;
 
-// int Fibonacci(int);
 
 int main(){
-    // for (int count = 0; count < 46; count++)
-    // {
-        //     cout << "The " << count << " Fib number is " << Fibonacci(count);
-        // }
-        
-    LinkedList list;
 
-    list.append(1);
-    list.append(3);
-    list.append(5);
-    list.display();
+    Bag bag1;
+    Bag bag2;
+
+    bag1.addItem("A", 2);
+    bag1.addItem("B", 1);
+    bag1.addItem("C", 4);
+    bag1.addItem("D", 1);
+    bag1.addItem("E", 1);
+
+    bag2.addItem("A", 2);
+    bag2.addItem("B", 1);
+    bag2.addItem("C", 4);
+    bag2.addItem("D", 1);
+    bag2.addItem("E", 1);
+
     
+    cout << "Sum of two bags" << endl;
+
+    (bag1 + bag2).display();
+
     return 0;
 }
-
-// int Fibonacci(int num){
-//     if (num == 0)
-//     {
-//         return 0; 
-//     }else if (num == 1)
-//         return 1;
-//     else   
-//         return Fibonacci(num - 1) + Fibonacci(num - 2);
-// }
