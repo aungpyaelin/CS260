@@ -9,8 +9,7 @@ void Bag::addItem(string name, int num){
 
 Bag Bag::operator+(const Bag& other){
     Bag result = *this;
-
-    for(auto item: other.items){
+    for(auto item : other.items){
         result.items[item.first] += item.second;
     }
 
@@ -18,7 +17,7 @@ Bag Bag::operator+(const Bag& other){
 }
 
 void Bag::display(){
-    for(auto item: items){
-        cout << item.first << " " << item.second << endl;
+    for(auto item : items){
+        cout << item.first << ": " << item.second << endl;
     }
 }
