@@ -1,0 +1,89 @@
+Welcome to the Print Queue Program 
+
+A new queue is now operational. You may queue up to 3 jobs in this queue.
+
+alice is enqueuing main.cpp...
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               3559
+
+bob is enqueuing resume.docx...
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               3559
+1       bob     2    resume.docx            -1
+
+carol is enqueuing invoice.xlsx...
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               3559
+1       bob     2    resume.docx            -1
+2       carol   3    invoice.xlsx           -1
+
+domingo is enqueuing article.doc...
+The queue is full! The new job is rejected from domingo; cannot queue article.doc to be printed.
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               3559
+1       bob     2    resume.docx            -1
+2       carol   3    invoice.xlsx           -1
+
+erin is a VIP enquing thesis.dvi...
+The queue is full! The new job is rejected from erin; cannot queue thesis.dvi to be printed.
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               3559
+1       bob     2    resume.docx            -1
+2       carol   3    invoice.xlsx           -1
+
+requesting that job 5 be canceled...
+Cancellation request rejected: Job 5 not found.
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               3559
+1       bob     2    resume.docx            -1
+2       carol   3    invoice.xlsx           -1
+
+requesting that job 2 be canceled...
+Job 2 canceled.
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               3559
+1       carol   3    invoice.xlsx           -1
+
+Finished printing main.cpp. Job 1 complete.
+
+Rank    Owner   Job  Files                  Total Size
+active  carol   3    invoice.xlsx           -1
+
+dave is enqueuing post.ps...
+
+Rank    Owner   Job  Files                  Total Size
+active  carol   3    invoice.xlsx           -1
+1       dave    4    poster.ps              -1
+
+erin is a VIP enquing thesis.dvi...
+
+Rank    Owner   Job  Files                  Total Size
+active  carol   3    invoice.xlsx           -1
+1       erin    5    thesis.dvi             -1
+2       dave    4    poster.ps              -1
+
+Finished printing invoice.xlsx. Job 3 complete.
+
+Rank    Owner   Job  Files                  Total Size
+active  erin    5    thesis.dvi             -1
+1       dave    4    poster.ps              -1
+
+Finished printing thesis.dvi. Job 5 complete.
+
+Rank    Owner   Job  Files                  Total Size
+active  dave    4    poster.ps              -1
+
+Finished printing poster.ps. Job 4 complete.
+
+Rank    Owner   Job  Files                  Total Size
+
+
+
+Program complete.
