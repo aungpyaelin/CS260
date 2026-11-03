@@ -166,6 +166,10 @@ void PrintQueue::VIPEnqueue(Job arg_job){
     newNode->next = curr;   //Link to the current node in the chain
     front->next = newNode; // Link the next pointer of the front node to newNode 
 
+    if(curr == nullptr){
+        rear = newNode;
+    }
+
     // For an empty queue
     if(isEmpty()){
         front = newNode;

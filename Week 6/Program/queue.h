@@ -38,6 +38,5 @@ class PrintQueue{
         void cancelJob(int);
         void list() const;
         bool isEmpty() const;
-        bool isFull() const;
         void clear();
 };
