@@ -18,7 +18,7 @@ a queue near the front of the queue after the currently printing job, ahead of
 the job with priority 1, reranking all other jobs (job with rank 0 is currently 
 printing and is unaffected by VIPEnqueue). 
 
-Sources: Gaddis, Priestley class/labs, ___ 
+Sources: Gaddis, Priestley class/labs, Stackoverflow, Computer Lab 1451
 
 Ok to share
 
@@ -42,7 +42,7 @@ void Print(PrintQueue&);
 int main(){
     // Init Variables
     string 
-        greeting("Welcome to the Print Queue Program\n\n A new queue is now operational. You may queue up to 3 jobs in this queue.\n\n");
+        greeting("Welcome to the Print Queue Program\n\nA new queue is now operational. You may queue up to 3 jobs in this queue.\n\n");
 
     PrintQueue queue;
 
@@ -51,7 +51,8 @@ int main(){
 
     Print(queue);
 
-
+    // Sign Off
+    cout << "\nProgram Completed."  << endl;
 
     // End normanlly
     return 0;
@@ -65,26 +66,29 @@ void Print(PrintQueue& queue){
         Job{0, "bob", 0, "resume.docx", 0},
         Job{0, "carol", 0, "invoice.xlsx", 0},
         Job{0, "dave", 0, "poster.ps", 0},
-        Job{0, "erin" , 0, "thesis.dvi", 0},
-        Job{0, "frank", 0, "resume.doc" , 0}
     }) {
-        cout << job.owner << " is enqueuing " << job.filename << "...\n";
         queue.enqueue(job);
         queue.list();
     }
     
+    // VIP enqueue
+    queue.VIPEnqueue({0, "erin" , 0, "thesis.dvi", 0});
+    queue.list();
+
+    queue.cancelJob(5);
+    queue.list();
+
+    queue.cancelJob(2);
+    queue.list();
+
     // Simulate completion of a job 
     catch_job = queue.dequeue();
     queue.list();
-    catch_job = queue.dequeue();
-    queue.list();
     
-    // Enqueue more jobs
-    cout << "dave is enqueuing post.ps...\n";
     queue.enqueue({0, "dave", 0, "poster.ps", 0});
     queue.list();
-    cout << "erin is enqueuing thesis.dvi...\n";
-    queue.enqueue({0, "erin", 0, "thesis.dvi", 0});
+
+    queue.VIPEnqueue({0, "erin" , 0, "thesis.dvi", 0});
     queue.list();
     
     // Dequeue all remaining jobs in the queue ;
@@ -92,5 +96,4 @@ void Print(PrintQueue& queue){
         catch_job = queue.dequeue();
         queue.list();
     }
-
 }

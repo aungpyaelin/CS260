@@ -34,6 +34,8 @@ class PrintQueue{
         //Queue Operations
         void enqueue(Job);
         Job dequeue();
+        void VIPEnqueue(Job);
+        void cancelJob(int);
         void list() const;
         bool isEmpty() const;
         bool isFull() const;

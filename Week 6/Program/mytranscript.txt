@@ -1,0 +1,91 @@
+Welcome to the Print Queue Program
+
+A new queue is now operational. You may queue up to 3 jobs in this queue.
+
+alice is enqueuing main.cpp...
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               2846
+
+bob is enqueuing resume.docx...
+Warning: could not get size of resume.docx
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               2846
+1       bob     2    resume.docx            -1
+
+carol is enqueuing invoice.xlsx...
+Warning: could not get size of invoice.xlsx
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               2846
+1       bob     2    resume.docx            -1
+2       carol   3    invoice.xlsx           -1
+
+dave is enqueuing poster.ps...
+The queue is full! The new job is rejected from dave; cannot queue poster.ps to be printed.
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               2846
+1       bob     2    resume.docx            -1
+2       carol   3    invoice.xlsx           -1
+
+erin is a VIP enquing thesis.dvi...
+The queue is full! The new job is rejected from erin; cannot queue thesis.dvi to be printed.
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               2846
+1       bob     2    resume.docx            -1
+2       carol   3    invoice.xlsx           -1
+
+Requesting that Job #5 be canceled...
+Cancellation request rejected: Job 5 could not be found!
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               2846
+1       bob     2    resume.docx            -1
+2       carol   3    invoice.xlsx           -1
+
+Requesting that Job #2 be canceled...
+Job 2 is canceled.
+
+Rank    Owner   Job  Files                  Total Size
+active  alice   1    main.cpp               2846
+1       carol   3    invoice.xlsx           -1
+
+Finished priting main.cpp. Job 1 complete.
+
+Rank    Owner   Job  Files                  Total Size
+active  carol   3    invoice.xlsx           -1
+
+dave is enqueuing poster.ps...
+Warning: could not get size of poster.ps
+
+Rank    Owner   Job  Files                  Total Size
+active  carol   3    invoice.xlsx           -1
+1       dave    4    poster.ps              -1
+
+erin is a VIP enquing thesis.dvi...
+Warning: could not get size of thesis.dvi
+
+Rank    Owner   Job  Files                  Total Size
+active  carol   3    invoice.xlsx           -1
+1       erin    5    thesis.dvi             -1
+2       dave    4    poster.ps              -1
+
+Finished priting invoice.xlsx. Job 3 complete.
+
+Rank    Owner   Job  Files                  Total Size
+active  erin    5    thesis.dvi             -1
+1       dave    4    poster.ps              -1
+
+Finished priting thesis.dvi. Job 5 complete.
+
+Rank    Owner   Job  Files                  Total Size
+active  dave    4    poster.ps              -1
+
+Finished priting poster.ps. Job 4 complete.
+
+Rank    Owner   Job  Files                  Total Size
+
+
+Program Completed.
