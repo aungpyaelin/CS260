@@ -14,9 +14,9 @@ insert, recursively display, and iteratively search.
 Sources: Gaddis, from Starter Code Provided
 
 Time Complexity: 
-    Insert-
-    Display-
-    Search-
+    Insert- O(lg n)
+    Display- O(n)
+    Search- O(lg n)
 *******************************************************************************/
 #include <iostream>
 #include <cstdlib>   // rand()
